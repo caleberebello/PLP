@@ -1,0 +1,9 @@
+combinação: user 0.01s system 0% cpu 15.871 total
+permutação: user 0.00s system 0% cpu 4.997 total
+desarranjo: user 0.00s system 0% cpu 4.224 total
+
+1. Familiaridade com a Linguagem
+
+2. facilidade de desenvolver - 7
+
+3. legibilidade
