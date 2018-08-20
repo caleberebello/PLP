@@ -1,18 +1,30 @@
 #include <stdio.h>
-#define TAM 4
 
-void combinacao(int vetor[]) {
-	int i, j, aux;
-	for(i=0;i<(TAM-1);i++){
-		for(j=0;j<TAM;j++){
-			printf("(%d, %d)\n",vetor[i],vetor[j]);
-			aux++;
+void escreve_vetor(int vetor[], int n){
+	for(int i=0;i<n;i++){
+		printf("Digite os valores do vetor: ");
+		scanf("%d", &vetor[i]);
+	}
+}
+
+void combinacao(int vetor[], int n) {
+	int i, j,  aux = 0;
+	for(i=0;i<n-1;i++){
+		for(j=0;j<n;j++){
+			if(vetor[i]==vetor[j]){
+				aux++;
+			} else {
+				printf("(%d, %d)",vetor[i],vetor[j]);
+			}
 		}
 	}
 }
 
 int main() {
-	int vetor[TAM] = {1,2,3,4};
-	combinacao(vetor);
+	int n, vetor[n];
+	printf("Digite o tamanho do vetor: ");
+	scanf("%d", &n);
+	escreve_vetor(vetor,n);
+	combinacao(vetor,n);
 	return 0;
 }
