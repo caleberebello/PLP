@@ -8,38 +8,45 @@ void escreve_vetor(int vetor[], int n){
 }
 
 void troca(int vetor[], int i, int j){
-	int aux;
+	int aux=0;
 	aux=vetor[i];
 	vetor[i]=vetor[j];
 	vetor[j]=aux;
 }
 
-void desarranjo(int vetor[], int inf,int sup) {
-	int aux1 = 0;
-	if(inf==sup){
-		for(int i=0;i<sup-1;i++){
-			if(vetor[i] == i+1){
-				aux1++;
+void desarranjo(int vetor[], int k, int n) {
+	int aux=0;
+	
+	if(k == sizeof(vetor[n])){
+		for(int i=0;i<n-1;i++){
+			if(vetor[i] == i + 1){
+				aux++;
 			}
 		}
-		if(aux1==0){
-			for(int i=0;i<sup-1;i++){
+		if(aux == 0){
+			for(int i=0; i<n-1;i++){
 				printf("%d",vetor[i]);
 			}
+			printf("\n");
 		}
-
-		for(int i=0;i<sup-1;i++){
-			troca(vetor, inf, i);
-			desarranjo(vetor, inf+1, sup);
-			troca(vetor, inf, i);
+	} else {
+		for(int i=k;i<sizeof(vetor[n]);i++){
+			troca(vetor,k,i);
+			desarranjo(vetor, k+1, n);
+			troca(vetor,k,i);
 		}
 	}
 }
+
+void listar_desarranjo(int vetor[], int n){
+	desarranjo(vetor, 0, n);
+}
+
 int main() {
 	int n,vetor[n];
 	printf("Digite o tamanho do vetor: ");
 	scanf("%d",&n);
 	escreve_vetor(vetor,n);
-	desarranjo(vetor,0,n);
+	listar_desarranjo(vetor, n);
 	return 0;
 }
