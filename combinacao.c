@@ -8,10 +8,10 @@ void escreve_vetor(int vetor[], int n){
 }
 
 void combinacao(int vetor[], int n) {
-	int i, j, vet[n];
+	int i, j, aux=0;
 	for(i=0;i<n-1;i++){
-		for(j=0;j<n;j++){
-			printf("(%d, %d)\n", vetor[i], vetor[j]); 			
+		for(j=i+1;j<n;j++){
+			printf("(%d, %d)\n", vetor[i], vetor[j]);
 		}
 	}
 }
