@@ -18,13 +18,13 @@ void desarranjo(int vetor[], int k, int n) {
 	int aux=0;
 	
 	if(k == sizeof(vetor[n])){
-		for(int i=0;i<n-1;i++){
+		for(int i=0;i<n;i++){
 			if(vetor[i] == i + 1){
 				aux++;
 			}
 		}
 		if(aux == 0){
-			for(int i=0; i<n-1;i++){
+			for(int i=0; i<n;i++){
 				printf("%d",vetor[i]);
 			}
 			printf("\n");
@@ -38,15 +38,11 @@ void desarranjo(int vetor[], int k, int n) {
 	}
 }
 
-void listar_desarranjo(int vetor[], int n){
-	desarranjo(vetor, 0, n);
-}
-
 int main() {
 	int n,vetor[n];
 	printf("Digite o tamanho do vetor: ");
 	scanf("%d",&n);
 	escreve_vetor(vetor,n);
-	listar_desarranjo(vetor, n);
+	desarranjo(vetor,0, n);
 	return 0;
 }

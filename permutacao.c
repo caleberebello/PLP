@@ -16,7 +16,7 @@ void troca(int vetor[], int i, int j){
 
 void permutacao(int vetor[], int k, int n) {
 	if(k == sizeof(vetor[n])){
-		for(int i=0;i<n-1;i++){
+		for(int i=0;i<n;i++){
 			printf("%d", vetor[i]);
 		}
 		printf("\n");
